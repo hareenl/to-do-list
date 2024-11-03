@@ -1,0 +1,214 @@
+/* Base styles for both light and dark modes */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Slimmer Form for Task Entry */
+.todo-list form {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+input, select, button {
+    padding: 6px 8px;
+    font-size: 12px;
+}
+
+/* Slim Drop-downs */
+input[type="text"], select {
+    padding: 6px;
+}
+
+#task-title {
+    flex-grow: 1;
+}
+
+#add-task-btn {
+    flex-shrink: 0;
+}
+
+/* Task styling with strike-through for completed tasks */
+.task {
+    padding: 8px;
+    border-radius: 6px;
+    border-left: 4px solid;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+.task.complete-task .task-title {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.low {
+    background-color: #e0f7fa;
+    border-color: #00796b;
+}
+
+.medium {
+    background-color: #fff9c4;
+    border-color: #fbc02d;
+}
+
+.high {
+    background-color: #ffcdd2;
+    border-color: #d32f2f;
+}
+
+/* Progress Styles */
+#task-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+progress {
+    width: 80%;
+}
+
+/* Delete button slimmer */
+button.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 4px 6px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ----- Dark Mode Styles ----- */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .task {
+    background-color: #424242;
+    border-left: 4px solid transparent;
+}
+
+body.dark-mode select, body.dark-mode input {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+body.dark-mode .low {
+    background-color: #004d40;
+    border-color: #26a69a;
+}
+
+body.dark-mode .medium {
+    background-color: #ffd600;
+    border-color: #ffc400;
+}
+
+body.dark-mode .high {
+    background-color: #c62828;
+    border-color: #ff5252;
+}
+
+/* ----- Floating Dark Mode Button ----- */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #004d40;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background-color: #4a4a4a;
+}
+
+/* ----- Clear All Bin Icon ----- */
+.clear-all-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.clear-all-btn:hover {
+    background-color: darkred;
+}
+
+/* ---- Responsive Design for Below 600px ---- */
+@media (max-width: 600px) {
+    body {
+        margin: 10px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .todo-list form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input, select, button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .task {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    progress {
+        width: 100%;
+    }
+
+    #dark-mode-toggle, #clear-all-btn {
+        width: 50px;
+        height: 50px;
+    }
+}

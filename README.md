@@ -1,1 +1,1 @@
-A simple Web To-Do List with local storage. 
+A simple Web based To-Do List with local storage. 
